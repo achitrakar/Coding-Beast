@@ -3,9 +3,6 @@
  */
 package com.cb;
 
-import junit.framework.TestCase;
-import org.junit.Test;
-
 import java.util.HashMap;
 
 /**
@@ -13,8 +10,8 @@ import java.util.HashMap;
  * Category: Easy
  * URL: https://leetcode.com/problems/detect-capital/
  */
-public class DetectCapital extends TestCase {
-    public boolean detectCapitalUse(String word) {
+public class DetectCapital {
+    public static boolean detectCapitalUse(String word) {
         int count = 0;
         for(char c: word.toCharArray()) {
             if (Character.isUpperCase(c)) {
@@ -29,13 +26,11 @@ public class DetectCapital extends TestCase {
      * @param word
      * @return
      */
-    public boolean detectCapitalUseReg(String word) {
+    public static boolean detectCapitalUseReg(String word) {
         return (word.matches("[A-Z]*|[A-Z]?[a-z]*"));
     }
 
-    @Test
-    public void testDetectCapital() {
-
+    public static void main(String[] args) {
         // A HashMap containing input with its expected output
         var inputs = new HashMap<String, Boolean>();
         inputs.put("USA", true);
@@ -44,7 +39,7 @@ public class DetectCapital extends TestCase {
         inputs.put("leetcode", true);
         inputs.put("ffffffffffffffffffffF", false);
 
-        inputs.forEach((input, expected) -> assertEquals(expected, Boolean.valueOf(detectCapitalUse(input))));
-        inputs.forEach((input, expected) -> assertEquals(expected, Boolean.valueOf(detectCapitalUseReg(input))));
+        inputs.forEach((input, expected) -> System.out.println("(Expected, Found) = (" + expected + ", " + detectCapitalUse(input) + ")"));
+        inputs.forEach((input, expected) -> System.out.println("(Expected, Found) = (" + expected + ", " + detectCapitalUseReg(input) + ")"));
     }
 }
