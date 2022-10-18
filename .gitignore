@@ -1,0 +1,14 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# CodeStream ignored files
+/codestream.xml
+
+*.bsp
+*.idea/
+*.sbt
+https:/
+target/
+project/
+
+
